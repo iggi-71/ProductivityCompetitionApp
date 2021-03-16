@@ -15,6 +15,7 @@
 		1862CAB626006E2A009D8E44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1862CAB426006E2A009D8E44 /* LaunchScreen.storyboard */; };
 		1862CAC126006E2B009D8E44 /* ProdCompTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1862CAC026006E2B009D8E44 /* ProdCompTests.swift */; };
 		1862CACC26006E2B009D8E44 /* ProdCompUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1862CACB26006E2B009D8E44 /* ProdCompUITests.swift */; };
+		1862CADE26014B1C009D8E44 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1862CADD26014B1C009D8E44 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		1862CAC726006E2B009D8E44 /* ProdCompUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProdCompUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1862CACB26006E2B009D8E44 /* ProdCompUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdCompUITests.swift; sourceTree = "<group>"; };
 		1862CACD26006E2B009D8E44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1862CADD26014B1C009D8E44 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				1862CAA926006E24009D8E44 /* AppDelegate.swift */,
+				1862CAE226014B22009D8E44 /* Views */,
 				1862CAAB26006E24009D8E44 /* SceneDelegate.swift */,
 				1862CAAD26006E24009D8E44 /* ContentView.swift */,
 				1862CAAF26006E2A009D8E44 /* Assets.xcassets */,
@@ -134,6 +137,14 @@
 				1862CACD26006E2B009D8E44 /* Info.plist */,
 			);
 			path = ProdCompUITests;
+			sourceTree = "<group>";
+		};
+		1862CAE226014B22009D8E44 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1862CADD26014B1C009D8E44 /* HomeView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1862CAAA26006E24009D8E44 /* AppDelegate.swift in Sources */,
+				1862CADE26014B1C009D8E44 /* HomeView.swift in Sources */,
 				1862CAAC26006E24009D8E44 /* SceneDelegate.swift in Sources */,
 				1862CAAE26006E24009D8E44 /* ContentView.swift in Sources */,
 			);
