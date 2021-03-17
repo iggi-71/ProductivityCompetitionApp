@@ -15,7 +15,9 @@
 		1862CAB626006E2A009D8E44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1862CAB426006E2A009D8E44 /* LaunchScreen.storyboard */; };
 		1862CAC126006E2B009D8E44 /* ProdCompTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1862CAC026006E2B009D8E44 /* ProdCompTests.swift */; };
 		1862CACC26006E2B009D8E44 /* ProdCompUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1862CACB26006E2B009D8E44 /* ProdCompUITests.swift */; };
-		1862CADE26014B1C009D8E44 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1862CADD26014B1C009D8E44 /* HomeView.swift */; };
+		1862CADE26014B1C009D8E44 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1862CADD26014B1C009D8E44 /* HomeVC.swift */; };
+		1862CAE72601527E009D8E44 /* FriendsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1862CAE62601527E009D8E44 /* FriendsVC.swift */; };
+		1862CAF626015485009D8E44 /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1862CAF526015485009D8E44 /* TaskVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +52,9 @@
 		1862CAC726006E2B009D8E44 /* ProdCompUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProdCompUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1862CACB26006E2B009D8E44 /* ProdCompUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdCompUITests.swift; sourceTree = "<group>"; };
 		1862CACD26006E2B009D8E44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1862CADD26014B1C009D8E44 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		1862CADD26014B1C009D8E44 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		1862CAE62601527E009D8E44 /* FriendsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsVC.swift; sourceTree = "<group>"; };
+		1862CAF526015485009D8E44 /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +146,9 @@
 		1862CAE226014B22009D8E44 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1862CADD26014B1C009D8E44 /* HomeView.swift */,
+				1862CADD26014B1C009D8E44 /* HomeVC.swift */,
+				1862CAE62601527E009D8E44 /* FriendsVC.swift */,
+				1862CAF526015485009D8E44 /* TaskVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -277,8 +283,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1862CAE72601527E009D8E44 /* FriendsVC.swift in Sources */,
 				1862CAAA26006E24009D8E44 /* AppDelegate.swift in Sources */,
-				1862CADE26014B1C009D8E44 /* HomeView.swift in Sources */,
+				1862CADE26014B1C009D8E44 /* HomeVC.swift in Sources */,
+				1862CAF626015485009D8E44 /* TaskVC.swift in Sources */,
 				1862CAAC26006E24009D8E44 /* SceneDelegate.swift in Sources */,
 				1862CAAE26006E24009D8E44 /* ContentView.swift in Sources */,
 			);
