@@ -15,10 +15,10 @@ class HomeView: UIViewController {
         @State var start = false
         @State var to : CGFloat = 25
         @State var count = 24
-        @State var countSec = 5
+        @State var countSec = 59
         @State var countSecTwo = 9
         @State var time = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
-        @State var timeSec = Timer.publish(every: 10, on: .main, in: .common).autoconnect()
+        @State var timeSec = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
         @State var timeSecTwo = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
         
         var body: some View{
@@ -46,7 +46,7 @@ class HomeView: UIViewController {
                             
                             VStack{
                                 
-                                Text("\(self.count):\(self.countSec)\(self.countSecTwo)")
+                                Text("\(self.count):\(self.countSec)")
                                     .font(.system(size:65))
                                     .fontWeight(.bold)
                                 
@@ -63,15 +63,15 @@ class HomeView: UIViewController {
                                 
                                 if self.countSec == 0{
                                     
-                                    self.countSec = 5
+                                    self.countSec = 59
                                     
                                 }
                                 
-                                if self.countSecTwo == 0{
-                                    
-                                    self.countSecTwo = 9
-                                    
-                                }
+//                                if self.countSecTwo == 0{
+//
+//                                    self.countSecTwo = 9
+//
+//                                }
 
 
                                 
@@ -106,8 +106,8 @@ class HomeView: UIViewController {
                             Button(action: {
                                 
                                 self.count = 24
-                                self.countSec = 5
-                                self.countSecTwo = 9
+                                self.countSec = 59
+//                                self.countSecTwo = 9
                                 
                                 withAnimation(.default){
                                     
@@ -183,10 +183,18 @@ class HomeView: UIViewController {
                         
                         if self.countSec == -1 {
 
-                            self.countSec = 5
+                            self.countSec = 59
                             print("seconds are working")
 
                         }
+                        
+                        if self.countSec == 9 {
+
+                            self.countSec = 09
+                            print("seconds are working")
+
+                        }
+                        
                         else{
 
                             self.Notify()
@@ -194,29 +202,6 @@ class HomeView: UIViewController {
                     }
                 }
                 
-                .onReceive(self.timeSecTwo) { (_) in
-
-                    if self.start{
-
-                        if self.count != 0 {
-
-                            self.countSecTwo -= 1
-                            print("seconds are working")
-
-                        }
-                        
-                        if self.countSecTwo == -1 {
-
-                            self.countSecTwo = 9
-                            print("seconds are working")
-
-                        }
-                        else{
-
-                            self.Notify()
-                        }
-                    }
-                }
                 
             }
         }

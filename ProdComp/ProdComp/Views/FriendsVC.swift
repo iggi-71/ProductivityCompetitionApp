@@ -13,7 +13,9 @@ class FriendsView: UIViewController {
         var body: some View{
             NavigationView{
                 ZStack{
-                    Text("This is the friend view")
+                    VStack{
+                        Text("This is the friend view")
+                    }
                 }
             }
         }
