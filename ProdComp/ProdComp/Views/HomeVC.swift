@@ -13,12 +13,13 @@ class HomeView: UIViewController {
     struct HomeView: View {
         
         @State var start = false
-        @State var to : CGFloat = 0
-        @State var count = 0
-        @State var countSec = 59
-        @State var time = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-        
-        @State var timeSec = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+        @State var to : CGFloat = 25
+        @State var count = 24
+        @State var countSec = 5
+        @State var countSecTwo = 9
+        @State var time = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
+        @State var timeSec = Timer.publish(every: 10, on: .main, in: .common).autoconnect()
+        @State var timeSecTwo = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
         
         var body: some View{
             NavigationView{
@@ -45,7 +46,7 @@ class HomeView: UIViewController {
                             
                             VStack{
                                 
-                                Text("\(self.count):\(self.countSec)")
+                                Text("\(self.count):\(self.countSec)\(self.countSecTwo)")
                                     .font(.system(size:65))
                                     .fontWeight(.bold)
                                 
@@ -60,15 +61,30 @@ class HomeView: UIViewController {
                             
                             Button(action: {
                                 
-                                if self.count == 25{
+                                if self.countSec == 0{
                                     
-                                    self.count = 0
-                                    withAnimation(.default){
-                                        
-                                        self.to = 0
-                                    }
+                                    self.countSec = 5
+                                    
                                 }
                                 
+                                if self.countSecTwo == 0{
+                                    
+                                    self.countSecTwo = 9
+                                    
+                                }
+
+
+                                
+                                //this is the the minutes
+                                if self.count == 0{
+                                    
+                                    self.count = 24
+                                    withAnimation(.default){
+                                        
+                                        self.to = 25
+                                    }
+                                }
+
                                 self.start.toggle()
                                 
                             }) {
@@ -89,8 +105,9 @@ class HomeView: UIViewController {
                             
                             Button(action: {
                                 
-                                self.count = 0
-                                self.countSec = 59
+                                self.count = 24
+                                self.countSec = 5
+                                self.countSecTwo = 9
                                 
                                 withAnimation(.default){
                                     
@@ -133,24 +150,74 @@ class HomeView: UIViewController {
                     
                     if self.start{
                         
-                        if self.count != 25 {
+                        if self.count != 0 {
                             
-                            self.count += 1
-                            self.countSec -= 1
-                            print("its working")
+                            self.count -= 1
+                            print("minutes is working")
                             
                             withAnimation(.default){
                                 
-                                self.to = CGFloat(self.count) / 25
+                                self.to = CGFloat(self.count) / 24
                             }
                         }
+                        
                         else{
                             
                             self.start.toggle()
                             self.Notify()
                         }
                     }
+                    
                 }
+                
+                .onReceive(self.timeSec) { (_) in
+
+                    if self.start{
+
+                        if self.count != 0 {
+
+                            self.countSec -= 1
+                            print("tens are working")
+
+                        }
+                        
+                        if self.countSec == -1 {
+
+                            self.countSec = 5
+                            print("seconds are working")
+
+                        }
+                        else{
+
+                            self.Notify()
+                        }
+                    }
+                }
+                
+                .onReceive(self.timeSecTwo) { (_) in
+
+                    if self.start{
+
+                        if self.count != 0 {
+
+                            self.countSecTwo -= 1
+                            print("seconds are working")
+
+                        }
+                        
+                        if self.countSecTwo == -1 {
+
+                            self.countSecTwo = 9
+                            print("seconds are working")
+
+                        }
+                        else{
+
+                            self.Notify()
+                        }
+                    }
+                }
+                
             }
         }
         func Notify() {

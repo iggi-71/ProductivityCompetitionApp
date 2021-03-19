@@ -13,6 +13,7 @@ struct ContentView: View {
     init() {
         UITabBar.appearance().barTintColor = .black
     }
+    
 
     var body: some View {
         TabView{
