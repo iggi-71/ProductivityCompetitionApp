@@ -9,5 +9,5 @@ import Foundation
 
 class  UserData: ObservableObject {
     @Published var coins: Int = 0
-    @Published var coins: Int = 0
+//    @Published var coins: Int = 0
 }

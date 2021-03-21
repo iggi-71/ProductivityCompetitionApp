@@ -16,7 +16,6 @@ class HomeView: UIViewController {
         @State var to : CGFloat = 25
         @State var count = 25
         @State var countSec = 0
-        @State var countSecTwo = 9
         @State var timeSec = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
         
         var body: some View{
@@ -52,7 +51,7 @@ class HomeView: UIViewController {
                             
                             VStack{
                                 
-                                Text("\(self.count):\(self.countSec)")
+                                Text(String(format: "%02d", count) + ":" + String(format: "%02d", countSec))
                                     .font(.system(size:65))
                                     .fontWeight(.bold)
                                 
