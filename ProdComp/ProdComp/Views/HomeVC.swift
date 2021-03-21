@@ -19,19 +19,17 @@ class HomeView: UIViewController {
         @State var countSecTwo = 9
         @State var time = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
         @State var timeSec = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-        @State var timeSecTwo = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
         
         var body: some View{
-            NavigationView{
+            VStack{
+                Text("Home Screen")
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 ZStack{
-                    
                     Color.black.opacity(0.1).edgesIgnoringSafeArea(.all)
                     
-                    
                     VStack{
-                        
-
-                        
+                        Spacer()
                         ZStack{
                             
                             Circle()
@@ -67,13 +65,13 @@ class HomeView: UIViewController {
                                     
                                 }
                                 
-//                                if self.countSecTwo == 0{
-//
-//                                    self.countSecTwo = 9
-//
-//                                }
-
-
+                                //                                if self.countSecTwo == 0{
+                                //
+                                //                                    self.countSecTwo = 9
+                                //
+                                //                                }
+                                
+                                
                                 
                                 //this is the the minutes
                                 if self.count == 0{
@@ -84,7 +82,7 @@ class HomeView: UIViewController {
                                         self.to = 25
                                     }
                                 }
-
+                                
                                 self.start.toggle()
                                 
                             }) {
@@ -107,7 +105,6 @@ class HomeView: UIViewController {
                                 
                                 self.count = 24
                                 self.countSec = 59
-//                                self.countSecTwo = 9
                                 
                                 withAnimation(.default){
                                     
@@ -140,69 +137,61 @@ class HomeView: UIViewController {
                         
                     }
                 }
-                .onAppear(perform: {
-                    
-                    UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert]) { (_, _) in
-                    }
-                })
                 
-                .onReceive(self.time) { (_) in
-                    
-                    if self.start{
-                        
-                        if self.count != 0 {
-                            
-                            self.count -= 1
-                            print("minutes is working")
-                            
-                            withAnimation(.default){
-                                
-                                self.to = CGFloat(self.count) / 24
-                            }
-                        }
-                        
-                        else{
-                            
-                            self.start.toggle()
-                            self.Notify()
-                        }
-                    }
-                    
+                
+            }
+            .onAppear(perform: {
+                
+                UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert]) { (_, _) in
                 }
+            })
+            
+            .onReceive(self.time) { (_) in
                 
-                .onReceive(self.timeSec) { (_) in
-
-                    if self.start{
-
-                        if self.count != 0 {
-
-                            self.countSec -= 1
-                            print("tens are working")
-
-                        }
+                if self.start{
+                    
+                    if self.count != 0 {
                         
-                        if self.countSec == -1 {
-
-                            self.countSec = 59
-                            print("seconds are working")
-
-                        }
+                        self.count -= 1
+                        print("minutes is working")
                         
-                        if self.countSec == 9 {
-
-                            self.countSec = 09
-                            print("seconds are working")
-
+                        withAnimation(.default){
+                            
+                            self.to = CGFloat(self.count) / 24
                         }
+                    }
+                    
+                    else{
                         
-                        else{
-
-                            self.Notify()
-                        }
+                        self.start.toggle()
+                        self.Notify()
                     }
                 }
                 
+            }
+            
+            .onReceive(self.timeSec) { (_) in
                 
+                if self.start{
+                    
+                    if self.count != 0 {
+                        
+                        self.countSec -= 1
+                        print("seconds are working")
+                        
+                    }
+                    
+                    if self.countSec == -1 {
+                        
+                        self.countSec = 59
+                        print("Restarting back to 59 seconds")
+                        
+                    }
+                    else{
+                        
+                        self.Notify()
+                    }
+                }
             }
         }
         func Notify() {

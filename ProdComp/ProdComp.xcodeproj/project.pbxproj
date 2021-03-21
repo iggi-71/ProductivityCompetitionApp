@@ -19,6 +19,7 @@
 		1862CAE72601527E009D8E44 /* FriendsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1862CAE62601527E009D8E44 /* FriendsVC.swift */; };
 		1862CAF626015485009D8E44 /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1862CAF526015485009D8E44 /* TaskVC.swift */; };
 		1862CB0926046CC1009D8E44 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1862CB0826046CC1009D8E44 /* DateViewController.swift */; };
+		18D068FD2606D8EE009AA67E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D068FC2606D8EE009AA67E /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		1862CAE62601527E009D8E44 /* FriendsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsVC.swift; sourceTree = "<group>"; };
 		1862CAF526015485009D8E44 /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
 		1862CB0826046CC1009D8E44 /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
+		18D068FC2606D8EE009AA67E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				1862CADD26014B1C009D8E44 /* HomeVC.swift */,
 				1862CAE62601527E009D8E44 /* FriendsVC.swift */,
 				1862CAF526015485009D8E44 /* TaskVC.swift */,
+				18D068FC2606D8EE009AA67E /* LoginVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			files = (
 				1862CAE72601527E009D8E44 /* FriendsVC.swift in Sources */,
 				1862CAAA26006E24009D8E44 /* AppDelegate.swift in Sources */,
+				18D068FD2606D8EE009AA67E /* LoginVC.swift in Sources */,
 				1862CADE26014B1C009D8E44 /* HomeVC.swift in Sources */,
 				1862CAF626015485009D8E44 /* TaskVC.swift in Sources */,
 				1862CAAC26006E24009D8E44 /* SceneDelegate.swift in Sources */,

@@ -7,14 +7,14 @@
 
 import SwiftUI
 import UserNotifications
-
+    
 struct ContentView: View {
     
     init() {
         UITabBar.appearance().barTintColor = .black
     }
     
-
+    
     var body: some View {
         TabView{
             HomeView.HomeView()
@@ -28,6 +28,7 @@ struct ContentView: View {
                     Image(systemName: "person.3.fill")
                     Text("Friends")
                 }
+            
             TaskView.TaskView()
                 .tabItem {
                     Image(systemName: "note.text")
