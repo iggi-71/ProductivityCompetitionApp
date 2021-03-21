@@ -12,9 +12,18 @@ class FriendsView: UIViewController {
     struct FriendsView: View {
         var body: some View{
             VStack{
-                Text("Friends Screen")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                HStack{
+                    Spacer()
+                    Spacer()
+                    Text("Friends Screen")
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    Spacer()
+                    VStack{
+                        Text("Points")
+                        Text("🌞")
+                    }
+                }
                 ZStack{
                     Color.black.opacity(0.1).edgesIgnoringSafeArea(.all)
 

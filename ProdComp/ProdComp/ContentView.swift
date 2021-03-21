@@ -11,7 +11,7 @@ import UserNotifications
 struct ContentView: View {
     
     init() {
-        UITabBar.appearance().barTintColor = .black
+        UITabBar.appearance().barTintColor = UIColor.white
     }
     
     
