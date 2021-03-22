@@ -13,31 +13,47 @@ class FriendsView: UIViewController {
   struct FriendsView: View {
     
     @EnvironmentObject var userData: userData
+
+    let friendTime = Int.random(in: 0..<99)
+    let botTime = Int.random(in: 0..<99)
+
     
     var body: some View{
       VStack{
-        HStack{
-          Spacer()
-          Spacer()
-          Text("Friends Screen")
-            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-          Spacer()
-          VStack{
-            Text("Points")
-            Text(String(format: "%02d", userData.coins))
-          }
-        }
-        ZStack{
-          Color.black.opacity(0.1).edgesIgnoringSafeArea(.all)
+        Text("You")
+          .font(.subheadline)
+          .fontWeight(.bold)
+        List(0 ..< 1) { item in
           HStack{
             Image("profile_picture")
             VStack{
               Text("\(userData.name)")
-              Text("Hello")
+              Text("Has been " + String(format: "%02d", userData.userTime) + " minutes productive today")
                 .font(.subheadline)
             }
-            
+          }
+        }
+        Text("Friends")
+          .font(.subheadline)
+          .fontWeight(.bold)
+        List(0 ..< 1) { item in
+          VStack{
+            HStack{
+              Image("profile_picture")
+              VStack{
+                Text("\(userData.friend)")
+                Text("Has been " + String(format: "%02d", friendTime) + " minutes productive today")
+                  .font(.subheadline)
+              }
+            }
+            HStack{
+              Image("profile_picture")
+              VStack{
+                Text("Jimmy (Bot)")
+                Text("Has been " + String(format: "%02d", botTime) + " minutes productive today")
+                  .font(.subheadline)
+              }
+            }
           }
         }
       }

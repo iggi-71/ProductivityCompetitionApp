@@ -13,13 +13,12 @@ class LoginView: UIViewController {
     var body: some View{
       VStack{
         Text("Login")
-        Text("Test")
-        NavigationLink(
-          destination: ContentView(),
-          label: {
-            /*@START_MENU_TOKEN@*/Text("Navigate")/*@END_MENU_TOKEN@*/
-          })
-        
+          .shadow(radius: 6)
+          .padding(.vertical)
+          .frame(width: (UIScreen.main.bounds.width / 2) - 55)
+          .background(
+            Capsule()
+              .stroke(Color.blue, lineWidth: 2))
       }
     }
   }

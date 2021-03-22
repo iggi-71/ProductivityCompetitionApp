@@ -21,18 +21,6 @@ class HomeView: UIViewController {
     
     var body: some View{
       VStack{
-//        HStack{
-//          Spacer()
-//          Spacer()
-//          Text("Home Screen")
-//            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-//            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-//          Spacer()
-//          VStack{
-//            Text("Points")
-//            Text(String(format: "%02d", userData.coins))
-//          }
-//        }
         ZStack{
           Color.black.opacity(0.1).edgesIgnoringSafeArea(.all)
           
@@ -175,6 +163,8 @@ class HomeView: UIViewController {
             self.countSec = 0
             self.start.toggle()
             self.userData.coins += 10  //adds coins to your score
+            self.userData.userTime += 25 // adds the completed time to the user
+            self.userData.sessionsCompleted += 1
           }
           
           if self.countSec == -1 {

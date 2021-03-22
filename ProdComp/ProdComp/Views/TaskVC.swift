@@ -12,14 +12,23 @@ class TaskView: UIViewController {
   
   struct TaskView: View {
     
-    @EnvironmentObject var userData: userData
+    let data = (1...10).map { "Item \($0)" }
+    
+    let columns = [
+      GridItem(.adaptive(minimum: 80))
+    ]
     
     var body: some View{
-      NavigationView{
-        ZStack{
-          TextField("name", text: self.$userData.name)
+      ScrollView {
+        LazyVGrid(columns: columns, spacing: 20) {
+          ForEach(data, id: \.self) { item in
+            Text(item)
+          }
         }
+        .padding(.horizontal)
       }
+      .frame(maxHeight: 300)
     }
   }
 }
+

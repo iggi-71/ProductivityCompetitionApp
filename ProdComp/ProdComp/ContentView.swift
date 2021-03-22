@@ -14,31 +14,69 @@ struct ContentView: View {
     UITabBar.appearance().barTintColor = UIColor.white
   }
   
+  @EnvironmentObject var userData: userData
+  
   var body: some View {
+    Text("Productify")
+      .fontWeight(.bold)
     NavigationView{
-      NavigationLink(destination:
-                      TabView{
-                        HomeView.HomeView()
-                          .tabItem {
-                            Image(systemName: "house.fill")
-                            Text("Home")
-                          }
-                        
-                        FriendsView.FriendsView()
-                          .tabItem {
-                            Image(systemName: "person.3.fill")
-                            Text("Friends")
-                          }
-                        
-                        TaskView.TaskView()
-                          .tabItem {
-                            Image(systemName: "note.text")
-                            Text("Task")
-                          }
-                      }
-      ) {
-        Text("Hello worldssss")
+      VStack{
+        HStack{
+          Spacer()
+          Spacer()
+          Spacer()
+          Spacer()
+          Spacer()
+          Spacer()
+          Spacer()
+          Text("")
+          Text("what is you name")
+          TextField("name", text: self.$userData.name)
+        }
+        HStack{
+          Spacer()
+          Spacer()
+          Spacer()
+          Spacer()
+          Spacer()
+          Spacer()
+          Spacer()
+          Text("")
+          Text("add your friends name")
+          TextField("name", text: self.$userData.friend)
+        }
+        HStack{
+          VStack{
+            NavigationLink(destination:
+                            TabView{
+                              HomeView.HomeView()
+                                .tabItem {
+                                  Image(systemName: "house.fill")
+                                  Text("Home")
+                                }
+                              
+                              FriendsView.FriendsView()
+                                .tabItem {
+                                  Image(systemName: "person.3.fill")
+                                  Text("Friends")
+                                }
+                              
+                              TaskView.TaskView()
+                                .tabItem {
+                                  Image(systemName: "note.text")
+                                  Text("Task")
+                                }
+                            }
+            ) {
+              //action to move to next view
+              LoginView.LoginView()
+            }
+          }
+        }
       }
+      
+
+      
     }
   }
 }
