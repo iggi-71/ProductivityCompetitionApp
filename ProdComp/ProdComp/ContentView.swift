@@ -7,39 +7,45 @@
 
 import SwiftUI
 import UserNotifications
-    
+
 struct ContentView: View {
-    
-    init() {
-        UITabBar.appearance().barTintColor = UIColor.white
+  
+  init() {
+    UITabBar.appearance().barTintColor = UIColor.white
+  }
+  
+  var body: some View {
+    NavigationView{
+      NavigationLink(destination:
+                      TabView{
+                        HomeView.HomeView()
+                          .tabItem {
+                            Image(systemName: "house.fill")
+                            Text("Home")
+                          }
+                        
+                        FriendsView.FriendsView()
+                          .tabItem {
+                            Image(systemName: "person.3.fill")
+                            Text("Friends")
+                          }
+                        
+                        TaskView.TaskView()
+                          .tabItem {
+                            Image(systemName: "note.text")
+                            Text("Task")
+                          }
+                      }
+      ) {
+        Text("Hello worldssss")
+      }
     }
-    
-    var body: some View {
-        TabView{
-            HomeView.HomeView()
-                .tabItem {
-                    Image(systemName: "house.fill")
-                    Text("Home")
-                }
-            
-            FriendsView.FriendsView()
-                .tabItem {
-                    Image(systemName: "person.3.fill")
-                    Text("Friends")
-                }
-            
-            TaskView.TaskView()
-                .tabItem {
-                    Image(systemName: "note.text")
-                    Text("Task")
-                }
-        }
-    }
+  }
 }
 
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }

@@ -8,18 +8,18 @@
 import SwiftUI
 
 class TaskView: UIViewController {
+  
+  
+  struct TaskView: View {
     
+    @EnvironmentObject var userData: userData
     
-    struct TaskView: View {
-        
-        @EnvironmentObject var userData: userData
-        
-        var body: some View{
-            NavigationView{
-                ZStack{
-                    TextField("name", text: self.$userData.name)
-                }
-            }
+    var body: some View{
+      NavigationView{
+        ZStack{
+          TextField("name", text: self.$userData.name)
         }
+      }
     }
+  }
 }
