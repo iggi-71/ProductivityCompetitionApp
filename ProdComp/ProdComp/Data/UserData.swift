@@ -7,7 +7,8 @@
 
 import Foundation
 
-class  UserData: ObservableObject {
+class  userData: ObservableObject {
     @Published var coins: Int = 0
-//    @Published var coins: Int = 0
+    @Published var TaskTextField: String = ""
+    @Published var name: String = ""
 }

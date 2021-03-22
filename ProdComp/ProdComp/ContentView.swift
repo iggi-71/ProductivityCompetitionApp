@@ -14,7 +14,6 @@ struct ContentView: View {
         UITabBar.appearance().barTintColor = UIColor.white
     }
     
-    
     var body: some View {
         TabView{
             HomeView.HomeView()

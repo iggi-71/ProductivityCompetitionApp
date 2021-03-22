@@ -9,11 +9,15 @@ import SwiftUI
 
 class TaskView: UIViewController {
     
+    
     struct TaskView: View {
+        
+        @EnvironmentObject var userData: userData
+        
         var body: some View{
             NavigationView{
                 ZStack{
-                    Text("this is the Task view")
+                    TextField("name", text: self.$userData.name)
                 }
             }
         }

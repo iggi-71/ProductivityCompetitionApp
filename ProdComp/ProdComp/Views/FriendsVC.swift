@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 class FriendsView: UIViewController {
     
     struct FriendsView: View {
+        
+        @EnvironmentObject var userData: userData
+        
         var body: some View{
             VStack{
                 HStack{
@@ -21,18 +25,19 @@ class FriendsView: UIViewController {
                     Spacer()
                     VStack{
                         Text("Points")
-                        Text("🌞")
+                        Text(String(format: "%02d", userData.coins))
                     }
                 }
                 ZStack{
                     Color.black.opacity(0.1).edgesIgnoringSafeArea(.all)
-
-                    List(0 ..< 5){ item in
+                    HStack{
                         Image("profile_picture")
                         VStack{
-                            Text("This is the friend view")
-                                .font(.subheadline)
-                        }
+                            Text("Hello")
+                            Text("Hello")
+                            Text("Hello")
+                    }
+                    
                     }
                 }
             }

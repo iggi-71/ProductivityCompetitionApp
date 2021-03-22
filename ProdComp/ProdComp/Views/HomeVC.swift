@@ -12,6 +12,7 @@ class HomeView: UIViewController {
     
     struct HomeView: View {
         
+        @EnvironmentObject var userData: userData
         @State var start = false
         @State var to : CGFloat = 25
         @State var count = 25
@@ -29,7 +30,7 @@ class HomeView: UIViewController {
                     Spacer()
                     VStack{
                         Text("Points")
-                        Text("🌞")
+                        Text(String(format: "%02d", userData.coins))
                     }
                 }
                 ZStack{
@@ -47,7 +48,7 @@ class HomeView: UIViewController {
                                 .trim(from: 0, to: self.to)
                                 .stroke(Color.blue, style: StrokeStyle(lineWidth: 25, lineCap: .round))
                                 .frame(width: 280, height: 280)
-                                .rotationEffect(.init(degrees: -90))
+                                .rotationEffect(.init(degrees: 270))
                             
                             VStack{
                                 
@@ -170,6 +171,7 @@ class HomeView: UIViewController {
                         self.count = 0
                         self.countSec = 0
                         self.start.toggle()
+                        self.userData.coins += 1
                     }
                     
                     if self.countSec == -1 {
