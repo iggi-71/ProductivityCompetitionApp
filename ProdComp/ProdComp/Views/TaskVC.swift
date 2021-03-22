@@ -12,22 +12,50 @@ class TaskView: UIViewController {
   
   struct TaskView: View {
     
-    let data = (1...10).map { "Item \($0)" }
-    
-    let columns = [
-      GridItem(.adaptive(minimum: 80))
-    ]
-    
     var body: some View{
-      ScrollView {
-        LazyVGrid(columns: columns, spacing: 20) {
-          ForEach(data, id: \.self) { item in
-            Text(item)
-          }
-        }
-        .padding(.horizontal)
-      }
-      .frame(maxHeight: 300)
+      
+      let FaceUp: Bool = true
+      
+      VStack(content: {
+          ForEach(0..<3, content: { index in
+              HStack(content: {
+                  ForEach(0..<3, content: { index in
+                      ZStack(content: {
+                          if FaceUp{
+                              RoundedRectangle(cornerRadius: 50)
+                              Text("👻")
+                          }
+                          else {
+                              RoundedRectangle(cornerRadius: 50)
+                          }
+                      })
+                  })
+              })
+          })
+      })
+      .foregroundColor(.white)
+      .padding()
+      .frame(width: 400, height: 400, alignment: .center)
+      .clipShape(Capsule())
+      
+//      HStack{
+//        VStack{
+//          Circle()
+//            .stroke(Color.blue, style: StrokeStyle(lineWidth: 5, lineCap: .square))
+//            .frame(width: 100, height: 100)
+//          Circle()
+//            .stroke(Color.blue, style: StrokeStyle(lineWidth: 5, lineCap: .square))
+//            .frame(width: 100, height: 100)
+//        }
+//        VStack{
+//          Circle()
+//            .stroke(Color.blue, style: StrokeStyle(lineWidth: 5, lineCap: .square))
+//            .frame(width: 100, height: 100)
+//          Circle()
+//            .stroke(Color.blue, style: StrokeStyle(lineWidth: 5, lineCap: .square))
+//            .frame(width: 100, height: 100)
+//        }
+//      }
     }
   }
 }
