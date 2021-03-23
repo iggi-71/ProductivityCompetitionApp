@@ -11,14 +11,16 @@ class LoginView: UIViewController {
   
   struct LoginView: View {
     var body: some View{
-      VStack{
-        Text("Login")
-          .shadow(radius: 6)
-          .padding(.vertical)
-          .frame(width: (UIScreen.main.bounds.width / 2) - 55)
-          .background(
-            Capsule()
-              .stroke(Color.blue, lineWidth: 2))
+      ZStack{
+        VStack{
+          Text("Login")
+            .shadow(radius: 6)
+            .padding(.vertical)
+            .frame(width: (UIScreen.main.bounds.width / 2) - 55)
+            .background(
+              Capsule()
+                .stroke(Color.blue, lineWidth: 2))
+        }
       }
     }
   }

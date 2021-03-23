@@ -11,6 +11,7 @@ class  userData: ObservableObject {
   @Published var coins: Int = 0
   @Published var sessionsCompleted: Int = 0
   @Published var userTime: Int = 0
+  @Published var numOfTask: Int = 0
   @Published var TaskTextField: String = ""
   @Published var name: String = ""
   @Published var friend: String = ""

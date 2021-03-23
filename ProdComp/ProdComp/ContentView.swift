@@ -20,31 +20,23 @@ struct ContentView: View {
     Text("Productify")
       .fontWeight(.bold)
     NavigationView{
-      VStack{
-        HStack{
-          Spacer()
-          Spacer()
-          Spacer()
-          Spacer()
-          Spacer()
-          Spacer()
-          Spacer()
-          Text("")
-          Text("what is you name")
-          TextField("name", text: self.$userData.name)
-        }
-        HStack{
-          Spacer()
-          Spacer()
-          Spacer()
-          Spacer()
-          Spacer()
-          Spacer()
-          Spacer()
-          Text("")
-          Text("add your friends name")
-          TextField("name", text: self.$userData.friend)
-        }
+      ZStack{
+        VStack{
+          HStack{
+            Text("what is you name")
+              .frame(minWidth: 120)
+            TextField("name", text: self.$userData.name)
+              .frame(maxWidth: 140)
+          }
+          .frame(maxHeight: .infinity, alignment: .center)
+          HStack{
+            Text("add your friends name")
+              .frame(minWidth: 120)
+            TextField("name", text: self.$userData.friend)
+              .frame(maxWidth: 140)
+          }
+          .frame(maxHeight: .infinity, alignment: .center)
+      }
         HStack{
           VStack{
             NavigationLink(destination:
@@ -74,6 +66,8 @@ struct ContentView: View {
           }
         }
       }
+      .edgesIgnoringSafeArea(.all)
+
       
 
       

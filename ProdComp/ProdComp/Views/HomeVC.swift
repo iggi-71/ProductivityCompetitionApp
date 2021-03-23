@@ -15,7 +15,7 @@ class HomeView: UIViewController {
     @EnvironmentObject var userData: userData
     @State var start = false
     @State var to : CGFloat = 25
-    @State var count = 1
+    @State var count = 25
     @State var countSec = 0
     @State var timeSec = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -165,6 +165,13 @@ class HomeView: UIViewController {
             self.userData.coins += 10  //adds coins to your score
             self.userData.userTime += 25 // adds the completed time to the user
             self.userData.sessionsCompleted += 1
+            self.userData.numOfTask += 1
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .long
+            dateFormatter.timeStyle = .none
+
+            let label = UILabel()
+            label.text = dateFormatter.string(from: Date())
           }
           
           if self.countSec == -1 {
