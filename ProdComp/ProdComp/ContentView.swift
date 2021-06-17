@@ -23,7 +23,7 @@ struct ContentView: View {
       ZStack{
         VStack{
           HStack{
-            Text("what is you name")
+            Text("what is your name")
               .frame(minWidth: 120)
             TextField("name", text: self.$userData.name)
               .frame(maxWidth: 140)

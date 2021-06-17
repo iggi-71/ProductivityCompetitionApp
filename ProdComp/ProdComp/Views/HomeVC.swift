@@ -28,6 +28,7 @@ class HomeView: UIViewController {
             Spacer()
             ZStack{
               
+              //This displays the clock while the timer is counting down
               Circle()
                 .trim(from: 0, to: 1)
                 .stroke(Color.black.opacity(0.6), style: StrokeStyle(lineWidth: 25, lineCap: .round))
@@ -40,11 +41,12 @@ class HomeView: UIViewController {
               
               VStack{
                 
+                //Displays the countdown of the timer from 25 to 0
                 Text(String(format: "%02d", count) + ":" + String(format: "%02d", countSec))
                   .font(.system(size:65))
                   .fontWeight(.bold)
                 
-                Text("of 25 Minutes")
+                Text("25 minutes")
                   .font(.title)
                   .padding(.top)
                 
@@ -53,8 +55,8 @@ class HomeView: UIViewController {
             
             HStack(spacing: 20) {
               
+              //this is the play button
               Button(action: {
-                //this is the play button
                 
                 if self.countSec == 0{
                   
